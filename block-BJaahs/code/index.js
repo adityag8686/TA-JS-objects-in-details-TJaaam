@@ -30,7 +30,7 @@ function createQuestion(title,options,correctAnswerIndex){
     question.getCorrectAnswer = function (){
         return this.options[this.correctAnswerIndex];
     }
-
+    return question;
 }
 let testData = {
     title: 'Where is the capital of Jordan',
