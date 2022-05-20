@@ -1,11 +1,46 @@
 # More about class
 
 - Create a class named `Square` which accepts one parameter `side` and will set two property `width` and `height` to the value of `side`.
+class Square {
+    constructor (side){
+        this.width = side;
+        this.height = side;
+    }
+}
 
 - Add a method named `description` that will alert a message saying `The square is ${width} x ${height}`
-
+class Square {
+    constructor (side){
+        this.width = side;
+        this.height = side;
+    }
+    description(){
+        alert(The square is ${width} x ${height});
+    }
+}
 - Create another method named `calcArea` that will return the area of the square.
-
+class Square {
+    constructor (side){
+        this.width = side;
+        this.height = side;
+    }
+    description(){
+        alert(`The square is ${width} * ${height}`);
+    }
+    calcArea(){
+        retrun this.width * this.height;
+    }
+    get area(){
+        retrun this.width * this.height;
+    }
+    set area(side){
+        this.width = side;
+        this.height = side;
+    }
+    static isEqual(area1, area2){
+        return area.thiswidth
+    }
+}
 - Create a getter method named `area` that will return area of the square.
 
 - Create a setter method named `area` that will accept a value (the value will be the area of any square like 124). Based on the input value update the `width` and `height` of the square.(The width and the height will be updated to 12 (12 \* 12 = 124))
