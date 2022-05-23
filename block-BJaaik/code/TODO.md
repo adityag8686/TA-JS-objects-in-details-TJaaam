@@ -26,15 +26,17 @@ class Person {
     }
 }
 class player extends person {
-    constructor(sportsName) {
-        this.sportName = sportsName;
+     constructor(name,age,gender,sportsNAme){
+         super(name,age,gender)
+        this.sportsName = sportsName;
     }
     play(){
         alert (`I am playing ${this.sportsName}`);
     }
 }
 class crickter extends player {
-    constructor (teamName){
+    constructor(name,age,gender,sportsNAme,teamName){
+        super(name,age,gender)
         this.teamName = teamName;
     }
     playCricket (){
@@ -42,7 +44,8 @@ class crickter extends player {
     }
 }
 class teacher extends person {
-    constructor (instituteName){
+    constructor(name,age,gender,instituteName){
+        super(name,age,gender)
         this.instituteName = instituteName;
     }
     teach(){
@@ -50,7 +53,8 @@ class teacher extends person {
     }
 }
 class artist extends person {
-   constructor (kind){
+  constructor(name,age,gender,kind){
+        super(name,age,gender)
         this.kind = kind;
     }
     createArt(){
