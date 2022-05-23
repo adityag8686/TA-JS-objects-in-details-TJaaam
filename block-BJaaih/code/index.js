@@ -7,7 +7,8 @@
 Array.prototype.myMap = function (cb){
   let arr = [];
   for (let i = 0; i< this.length; i++){
-    arr.push(this[i]);
+    let ele = this[i];
+    arr.push(cb(ele,i,this));
   }
   return arr;
 }
@@ -43,7 +44,7 @@ Array.prototype.myFilter = function (cb){
       arr.push(this[i]);
     }
   }
-  return arr;
+  return arr; 
 }
 
 
@@ -116,11 +117,12 @@ array that will contain only element that is common in both the array.
 
 // You code goes here
 Array.prototype.intersection = function(array){
-  return this.filter(ele=>{
-    if(array.includes(ele)){
-      return ele;
+  return this.reduce((acc,cv)=>{
+    if(array.includes(cv)){
+      array.push(cv)
     }
-  });
+    return acc;
+  },[]).unique;
 } 
 
 // Test to check the shuffle method (It will return different output every time you call)
@@ -135,14 +137,14 @@ chunk will be the remaining elements. `length` should default to 1.
 
 // You code goes here
 Array.prototype.chunk = function(size){
-  let arr = [...this]
-  let length = Math.floor(this/size);
-  let finalArr =[];
-  for(let i = 0 ; i<length ; i++){
-    let chunk =  arr.splice (0,size);
-    finalArr.push(chunk);
+  let arr = [...this];
+  let length = Math.floor(this.length/size);
+  let final =[];
+  for(let i = 0 ; i<= length ; i++){
+    let chunk =  arr.splice(0,size);
+    final.push(chunk);
   }
-  return finalArr;
+  return final.filter(ele =>ele.length);
 }
 
 // Test to check the shuffle method (It will return different output every time you call)
