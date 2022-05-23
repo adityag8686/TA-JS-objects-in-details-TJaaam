@@ -4,6 +4,13 @@
 */
 
 // myMap function goes here
+Array.prototype.myMap = function (cb){
+  let arr = [];
+  for (let i = 0; i< this.length; i++){
+    arr.push(this[i]);
+  }
+  return arr;
+}
 
 // Test the myMap function you created above
 
@@ -29,6 +36,16 @@ After adding the function test it using the code below.
 */
 
 // You code goes here
+Array.prototype.myFilter = function (cb){
+  let arr = [];
+  for (let i = 0; i< this.length; i++){
+    if (cb(this[i])){
+      arr.push(this[i]);
+    }
+  }
+  return arr;
+}
+
 
 let even = numbers.myFilter(function (num) {
   return num % 2 === 0;
@@ -50,6 +67,14 @@ Make sure it does not the changes the original array.
 */
 
 // You code goes here
+Array.prototype.shuffle = function(){
+  let arr = [];
+  for(let i=this.length-1 ; i>= 0 ; i--){
+    let random = Math.floor(Math.random()*i);
+    arr.push(this[random]);
+  }
+  return arr;
+}
 
 // Test to check the shuffle method (It will return different output every time you call)
 console.log(numbers.shuffle());
@@ -65,6 +90,18 @@ Unique means no element should come multiple times.
 
 // You code goes here
 
+Array.prototype.unique= function(){
+  let newArr =[];
+    for(index= 0 ; index< this.length ; index++){
+      for(let i = index ; i<=this.length ; i++){
+        if(!newArr.includes(this[index])){
+          newArr.push(this[index]);
+        }
+      }
+    }
+    return newArr;
+}
+
 // Test to check the shuffle method (It will return different output every time you call)
 let num = [1, 2, 3, 4, 2, 3, 6, 7, 7];
 let strings = 'helloworld'.split('');
@@ -78,6 +115,13 @@ array that will contain only element that is common in both the array.
 */
 
 // You code goes here
+Array.prototype.intersection = function(array){
+  return this.filter(ele=>{
+    if(array.includes(ele)){
+      return ele;
+    }
+  });
+} 
 
 // Test to check the shuffle method (It will return different output every time you call)
 console.log(num.intersection([2, 7, 11, 32])); // [2, 7]
@@ -90,6 +134,16 @@ chunk will be the remaining elements. `length` should default to 1.
 */
 
 // You code goes here
+Array.prototype.chunk = function(size){
+  let arr = [...this]
+  let length = Math.floor(this/size);
+  let finalArr =[];
+  for(let i = 0 ; i<length ; i++){
+    let chunk =  arr.splice (0,size);
+    finalArr.push(chunk);
+  }
+  return finalArr;
+}
 
 // Test to check the shuffle method (It will return different output every time you call)
 console.log(num.chunk(2)); // [[1, 2], [3, 4], [2, 3], [6, 7], [7]]
