@@ -34,26 +34,26 @@ class Stack{
         this.stack.push(value);
         return this.stack;
     }
-    pop(value){
-        this.stack.pop(value);
+    pop(){
+        this.stack.pop();
         return this.stack;
     }
     peek(value){
         this.stack[this.stack.length -1];
     }
     reverse(){
-        this.stack.reverse();
-        return this.reverse;
+        return this.stack.reverse();
+      
     }
     isEmpty(){
-        !(this.stack.length > 0)
+       return !(this.stack.length > 0)
     }
     displayStack(){
-        this.stack.join("");
-        return this.stack;
+        return this.stack.join("");
+        
     }
     get length(){
-        this.stack.length;
+       return this.stack.length;
     }
 }
 
@@ -101,18 +101,18 @@ class Queue{
         this.queue.push(value);
         return this.queue;
     }
-    dequeue(value){
-        this.queue.pop(value);
+    dequeue(){
+        this.queue.splice(0,1);
         return this.queue;
     }
-    peek(index = this.queue.length - 1){
+    peek(index = 0 ){
         return this.queue[index];
     }
     isEmpty(){
         return !(this.queue.length> 0);
     }
-    displayQueue(value){
-        this.queue.join(value);
+    displayQueue(){
+        this.queue.join(" ");
         return this.queue;
     }
     get length(){
