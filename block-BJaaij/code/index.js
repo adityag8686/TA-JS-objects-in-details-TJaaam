@@ -1,36 +1,37 @@
-class Book{
-    constructor(title, category, author, isread = false, finishedDate) {
+class Book extends Booklist{
+    constructor(title, category, author) {
         this.title = title;
         this.category = category;
         this.author = author;
-        this.isread = isread;
-        this.finishedDate = finishedDate;
+        this.isread = false;
+        this.finishedDate = null;
     }
     marksBookAsRead (){
-        this.isread = !this.isread;
-        return (this.finishedDate = Date.now());
+        this.isread = true;
+        this.finishedDate = Date.now();
     }
 }
 
 class BookList {
-    constructor(books,index){
-        this.books = books;
+    constructor(){
+        this.books = [];
         this.index = index;
     }
-    add(book) {
-        this.book = this.book.concat(book)
+    add(books) {
+        this.books = this.books.push(book)
+        return this.books
     }
     getCurrentBook (){
-        return this.book[this.index];
+        return this.books[this.index];
     }
     getNextBook(){
-        return this.book[this.index + 1];
+        return this.books[this.index + 1];
     }
     getPreviousBook(){
-        return this.book[this.index - 1];
+        return this.books[this.index - 1];
     }
-    changeCurrentBook(para){
-        return this.index = para;
+    changeCurrentBook(index){
+        return this.index = index;
     }
 }
 let book1 = new Book("The Alchemist", "Fiction", "Paulo Coehlo", false, 2012);
