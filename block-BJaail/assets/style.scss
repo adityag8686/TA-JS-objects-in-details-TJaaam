@@ -1,0 +1,70 @@
+*{
+    box-sizing: border-box;   
+}
+$primary : #008CBA;
+
+html{
+    font-size: 62.5%;
+}
+body{
+    padding: 6rem;
+}
+section{
+    header{
+        font-size: 4rem;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+    label{
+        font-size: 2rem;
+        margin: 2rem 0;
+    }
+    .inputbox{
+        width: 100%;
+        display:block;
+        padding: .8rem ;
+        background-color: none;
+        border: 2px solid #777;
+        margin-bottom: 1rem;
+    }
+    button{
+        display: inline-block;
+        width:100%;
+        padding: .8rem;
+        font-size: 1.5rem;
+        background-color: $primary;
+        margin-top: 2rem;
+        border: none;
+        color: #fff;
+    }
+    .content-container{
+        width: 100%;
+        margin-top: 1rem;
+        .bookList-heading{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-top: .1rem solid  #dddd;
+            font-size: 2rem;
+        }
+    }
+}
+.bookData{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.7rem;
+    padding:.8rem;
+    background-color: #ddd;
+    position: relative;
+    span{
+        position: absolute;
+        right: 0;
+        
+    }
+    .last-p{
+        margin-right:2rem;
+    }
+}
